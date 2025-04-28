@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "name": "crud-com-sqlite",
+  "version": "1.0.0",
+  "description": "Usando CRUD com SQLite",
+  "main": "index.js",
+  "type":"module",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarylyaGaby/CRUD-com-SQLite.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarylyaGaby/CRUD-com-SQLite/issues"
+  },
+  "homepage": "https://github.com/MarylyaGaby/CRUD-com-SQLite#readme"
+}
