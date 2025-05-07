@@ -36,14 +36,15 @@ export const getAllUsers = async (req, res)=>{
 
 //professor fez 
 export const createUser = async(req, res) =>{
-    const {name, email} = req.body
+    const {name, email, password} = req.body
     
     try{
         //tento fazer algo aqui
         const NewUser= await prisma.user.create({
             data: {
                 name,
-                email
+                email,
+                password
             }
         })
         res.status(201).json(NewUser)
@@ -59,13 +60,13 @@ export const createUser = async(req, res) =>{
 export const updateUser = async (req, res) => {
 
     const id = req.params.id
-    const {name, email} = req.body
+    const {name, email, password} = req.body
     try {
-        await prisma.user.update({
-            where: {id: parseInt},
-            data: {name, email}
+        const userUpdated = await prisma.user.update({
+            where: {id: parseInt(id)},
+            data: {name, email, password}
         })
-      res.status(200).json(updateUser)
+      res.status(200).json(userUpdated)
     } catch (error) {
         res.status(400).json({
             mensagem:"Erro ao atualizar usuário",
