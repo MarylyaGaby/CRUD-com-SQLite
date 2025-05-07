@@ -62,11 +62,11 @@ export const updateUser = async (req, res) => {
     const id = req.params.id
     const {name, email, password} = req.body
     try {
-        await prisma.user.update({
-            where: {id: parseInt},
+        const userUpdated = await prisma.user.update({
+            where: {id: parseInt(id)},
             data: {name, email, password}
         })
-      res.status(200).json(updateUser)
+      res.status(200).json(userUpdated)
     } catch (error) {
         res.status(400).json({
             mensagem:"Erro ao atualizar usuário",
