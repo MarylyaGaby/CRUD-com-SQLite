@@ -1,5 +1,6 @@
 import express from "express"
 import userRoutes from "./routes/userRoutes.js"
+import productRoutes from "./routes/productRoutes.js"
 
 const app = express()
 /* Permite que o Express entenda
@@ -10,6 +11,6 @@ app.use(express.json())
  *  para as rotas de usuário
  */ 
 app.use("/users", userRoutes)
-
+app.use("/products", productRoutes)
 
 export default app;
